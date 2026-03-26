@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Curious Minds Studio</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+        }
+
+        header {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 2rem 0;
+            text-align: center;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        header h1 {
+            font-size: 2.5rem;
+            margin-bottom: 0.5rem;
+        }
+
+        header p {
+            font-size: 1.1rem;
+            opacity: 0.9;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 3rem 1rem;
+        }
+
+        .intro-section {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+
+        .intro-section h2 {
+            font-size: 2rem;
+            margin-bottom: 1rem;
+            color: #667eea;
+        }
+
+        .intro-section p {
+            font-size: 1.1rem;
+            color: #666;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .project-card {
+            background: white;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .project-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+        }
+
+        .project-header {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 1.5rem;
+        }
+
+        .project-header h3 {
+            font-size: 1.5rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .project-content {
+            padding: 1.5rem;
+        }
+
+        .project-content p {
+            color: #666;
+            margin-bottom: 1rem;
+            line-height: 1.6;
+        }
+
+        .project-content ul {
+            list-style-position: inside;
+            margin-bottom: 1rem;
+            color: #666;
+        }
+
+        .project-content li {
+            margin-bottom: 0.5rem;
+        }
+
+        .project-buttons {
+            display: flex;
+            gap: 1rem;
+            flex-wrap: wrap;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 0.75rem 1.5rem;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            border: none;
+            cursor: pointer;
+            font-size: 0.95rem;
+            transition: opacity 0.3s ease;
+        }
+
+        .btn:hover {
+            opacity: 0.9;
+        }
+
+        .btn-secondary {
+            background: #f0f0f0;
+            color: #333;
+            border: 2px solid #667eea;
+        }
+
+        .btn-secondary:hover {
+            background: #667eea;
+            color: white;
+        }
+
+        footer {
+            background: #333;
+            color: white;
+            text-align: center;
+            padding: 2rem;
+            margin-top: 4rem;
+        }
+
+        footer p {
+            margin-bottom: 0.5rem;
+        }
+
+        .social-links {
+            margin-top: 1rem;
+        }
+
+        .social-links a {
+            color: #667eea;
+            margin: 0 0.5rem;
+            text-decoration: none;
+        }
+
+        .social-links a:hover {
+            text-decoration: underline;
+        }
+
+        @media (max-width: 768px) {
+            header h1 {
+                font-size: 2rem;
+            }
+
+            .intro-section h2 {
+                font-size: 1.5rem;
+            }
+
+            .projects-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Curious Minds Studio</h1>
+        <p>Innovative Projects & Tools</p>
+    </header>
+
+    <div class="container">
+        <div class="intro-section">
+            <h2>Welcome to Our Projects</h2>
+            <p>Explore our collection of innovative tools and projects designed to solve real-world problems and inspire curiosity.</p>
+        </div>
+
+        <div class="projects-grid">
+            <!-- What-If Project -->
+            <div class="project-card">
+                <div class="project-header">
+                    <h3>🤔 What-If</h3>
+                </div>
+                <div class="project-content">
+                    <p>Explore hypothetical scenarios and discover fascinating insights with our What-If simulation tool.</p>
+                    <ul>
+                        <li>Interactive scenarios</li>
+                        <li>Real-time simulations</li>
+                        <li>Data-driven insights</li>
+                    </ul>
+                    <div class="project-buttons">
+                        <a href="https://github.com/curiousmindsstudio/What-If" class="btn">View Repository</a>
+                        <a href="https://github.com/curiousmindsstudio/What-If" class="btn btn-secondary">Learn More</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Health-Tools Project -->
+            <div class="project-card">
+                <div class="project-header">
+                    <h3>💪 Health-Tools</h3>
+                </div>
+                <div class="project-content">
+                    <p>Comprehensive health and wellness tools to help you track, manage, and improve your wellbeing.</p>
+                    <ul>
+                        <li>Health tracking</li>
+                        <li>Wellness insights</li>
+                        <li>Personalized recommendations</li>
+                    </ul>
+                    <div class="project-buttons">
+                        <a href="https://github.com/curiousmindsstudio/Health-tools" class="btn">View Repository</a>
+                        <a href="https://github.com/curiousmindsstudio/Health-tools" class="btn btn-secondary">Learn More</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <p>&copy; 2026 Curious Minds Studio. All rights reserved.</p>
+        <p>Dedicated to innovation and creative problem-solving</p>
+        <div class="social-links">
+            <a href="https://github.com/curiousmindsstudio">GitHub</a>
+            <a href="mailto:contact@curiousmindsstudio.com">Contact</a>
+        </div>
+    </footer>
+</body>
+</html>
