@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AI Tools - Curious Minds</title>
+
+<style>
+body {
+    font-family: sans-serif;
+    background: #0f172a;
+    color: white;
+    text-align: center;
+    padding: 2rem;
+}
+
+textarea {
+    width: 90%;
+    height: 120px;
+    padding: 10px;
+    margin-top: 1rem;
+}
+
+button {
+    margin-top: 1rem;
+    padding: 10px 20px;
+    background: #6366f1;
+    border: none;
+    color: white;
+    cursor: pointer;
+}
+
+.result {
+    margin-top: 2rem;
+    background: #1e293b;
+    padding: 1rem;
+    border-radius: 10px;
+}
+</style>
+</head>
+
+<body>
+
+<h1>🧠 AI Study Helper</h1>
+<p>Enter any topic → get simple explanation</p>
+
+<textarea id="input" placeholder="e.g. Photosynthesis"></textarea>
+<br>
+<button onclick="generate()">Generate</button>
+
+<div class="result" id="output">Result will appear here...</div>
+
+<script>
+async function generate(){
+    let input = document.getElementById("input").value;
+
+    let response = await fetch("https://api.countapi.xyz/hit/curious/ai"); // placeholder
+    
+    // 🔴 IMPORTANT: Replace with real AI API later
+    document.getElementById("output").innerText =
+    "AI response for: " + input + "\n\n(Connect real API later)";
+}
+</script>
+
+</body>
+  </html>
