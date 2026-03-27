@@ -4,135 +4,91 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Curious Minds Studio</title>
+<title>Curious Minds</title>
 
-<meta name="description" content="Curious Minds Studio - AI tools, study blogs, health tools, and creative experiments.">
+<meta name="description" content="Explore knowledge, study smarter, and grow with Curious Minds.">
 
 <style>
-:root {
-    --bg: #f1f5ff;
-    --text: #111;
-    --glass: rgba(255,255,255,0.25);
+:root{
+    --bg:#0f172a;
+    --text:white;
+    --card:rgba(255,255,255,0.05);
 }
 
-.dark {
-    --bg: #0f172a;
-    --text: #e5e7eb;
-    --glass: rgba(255,255,255,0.05);
+.light{
+    --bg:#f1f5ff;
+    --text:#111;
+    --card:rgba(0,0,0,0.05);
 }
 
-body {
-    margin: 0;
-    font-family: 'Segoe UI', sans-serif;
-    background: var(--bg);
-    color: var(--text);
-    transition: 0.3s;
+body{
+    margin:0;
+    font-family:'Segoe UI',sans-serif;
+    background:var(--bg);
+    color:var(--text);
 }
 
 /* NAV */
-nav {
-    display: flex;
-    justify-content: space-between;
-    padding: 1rem 2rem;
+nav{
+    display:flex;
+    justify-content:space-between;
+    padding:1rem 2rem;
 }
 
-nav a {
-    margin-left: 15px;
-    text-decoration: none;
-    color: var(--text);
+.logo{
+    font-weight:bold;
+    font-size:20px;
 }
 
 /* HERO */
-.hero {
-    text-align: center;
-    padding: 5rem 1rem;
+.hero{
+    text-align:center;
+    padding:3rem 1rem;
 }
 
-.hero h1 {
-    font-size: 2.8rem;
+.hero h1{
+    font-size:2.5rem;
 }
 
-.hero p {
-    max-width: 600px;
-    margin: 1rem auto;
-    color: gray;
-}
-
-/* BUTTON */
-.btn {
-    display: inline-block;
-    margin: 10px;
-    padding: 12px 20px;
-    background: #6366f1;
-    color: white;
-    border-radius: 8px;
-    text-decoration: none;
-    transition: 0.3s;
-}
-
-.btn:hover {
-    transform: scale(1.05);
-}
-
-/* GLASS CARD */
-.card {
-    background: var(--glass);
-    backdrop-filter: blur(12px);
-    border-radius: 15px;
-    padding: 1.5rem;
-    transition: 0.4s;
-}
-
-.card:hover {
-    transform: translateY(-10px);
+/* CONTAINER */
+.container{
+    max-width:1100px;
+    margin:auto;
+    padding:2rem;
 }
 
 /* GRID */
-.container {
-    max-width: 1100px;
-    margin: auto;
-    padding: 2rem;
+.grid{
+    display:grid;
+    grid-template-columns: repeat(auto-fit,minmax(250px,1fr));
+    gap:20px;
 }
 
-.grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-    gap: 2rem;
+/* CARD */
+.card{
+    background:var(--card);
+    padding:1.5rem;
+    border-radius:15px;
+    text-decoration:none;
+    color:inherit;
+    transition:0.25s;
 }
 
-/* SECTION */
-.section {
-    text-align: center;
-    padding: 3rem 1rem;
+.card:hover{
+    transform:translateY(-5px);
+    background:rgba(255,255,255,0.08);
 }
 
-/* ANIMATION */
-.fade {
-    opacity: 0;
-    transform: translateY(40px);
-    transition: 0.8s;
-}
-
-.show {
-    opacity: 1;
-    transform: translateY(0);
-}
-
-/* FORM */
-input, textarea {
-    width: 100%;
-    padding: 10px;
-    margin: 10px 0;
-    border-radius: 6px;
-    border: none;
+/* TITLE */
+.card h3{
+    margin-top:0;
 }
 
 /* FOOTER */
-footer {
-    text-align: center;
-    padding: 2rem;
-    background: #111;
-    color: white;
+footer{
+    text-align:center;
+    padding:2rem;
+    background:#111;
 }
 </style>
 </head>
@@ -141,128 +97,71 @@ footer {
 
 <!-- NAV -->
 <nav>
-    <b>Curious Minds</b>
-    <div>
-        <a href="#projects">Projects</a>
-        <a href="/ai-tools.html">AI Tools</a>
-        <a href="/blog/index.html">Blog</a>
-        <a href="#contact">Contact</a>
-        <span onclick="toggleMode()" style="cursor:pointer;" id="icon">🌕</span>
-    </div>
+<div class="logo">Curious Minds</div>
+<div onclick="toggleMode()" style="cursor:pointer;" id="icon">🌕</div>
 </nav>
 
 <!-- HERO -->
-<section class="hero fade">
-    <h1>Think. Build. Grow.</h1>
-    <p>Curious Minds Studio creates AI tools, study resources, and creative experiments to help you learn smarter.</p>
-    
-    <a href="/ai-tools.html" class="btn">🧠 Try AI Tools</a>
-    <a href="/blog/index.html" class="btn">✍️ Read Blog</a>
+<section class="hero">
+<h1>Explore. Learn. Grow.</h1>
+<p>Curiosity leads to knowledge. Knowledge builds your future.</p>
 </section>
 
-<!-- FEATURES -->
-<section class="container fade">
-    <div class="grid">
-        <div class="card">🚀 Fast & Lightweight</div>
-        <div class="card">🧠 Built for Students</div>
-        <div class="card">🌍 Free & Accessible</div>
-    </div>
-</section>
+<!-- MAIN GRID -->
+<div class="container">
+<div class="grid">
 
-<!-- PROJECTS -->
-<div class="container" id="projects">
-    <h2 style="text-align:center;">🚀 Projects</h2>
+<!-- STUDY HUB -->
+<a href="neet.html" class="card">
+<h3>📚 Study Hub</h3>
+<p>NEET preparation, smart syllabus, weightage & tools</p>
+</a>
 
-    <div class="grid">
+<!-- WHAT IF -->
+<a href="what-if.html" class="card">
+<h3>🤔 What If</h3>
+<p>Explore mind-blowing hypothetical ideas and scenarios</p>
+</a>
 
-        <div class="card fade">
-            <h3>🤔 What If</h3>
-            <p>Explore hypothetical scenarios and boost curiosity.</p>
-            <a href="https://curiousmindsstudio.github.io/What-If/index.html" class="btn">Live</a>
-        </div>
+<!-- HEALTH -->
+<a href="health.html" class="card">
+<h3>🩺 Health</h3>
+<p>Learn about diseases, first aid, and medical knowledge</p>
+</a>
 
-        <div class="card fade">
-            <h3>💪 Health Tools</h3>
-            <p>Improve your daily health using smart tools.</p>
-            <a href="https://curiousmindsstudio.github.io/health-tools/index.html" class="btn">Live</a>
-        </div>
+<!-- TOOLS -->
+<a href="#" class="card">
+<h3>⚙️ Tools</h3>
+<p>Useful tools (coming soon)</p>
+</a>
 
-    </div>
 </div>
-
-<!-- YOUTUBE -->
-<section class="section fade">
-    <h2>🎥 YouTube Channel</h2>
-    <p>Learn through videos and experiments.</p>
-    <a href="https://youtube.com/@curiousminds-studio?si=yVjfN0WJHVp3EZ_q" class="btn">Visit Channel</a>
-</section>
-
-<!-- CONTACT / FEEDBACK -->
-<section class="container fade" id="contact">
-    <h2>💬 Feedback</h2>
-
-    <form onsubmit="sendFeedback(event)">
-        <input id="name" placeholder="Your Name" required>
-        <textarea id="msg" placeholder="Your Feedback" required></textarea>
-        <button class="btn">Send</button>
-    </form>
-
-    <p>Email: curiousminds.work@gmail.com</p>
-</section>
+</div>
 
 <!-- FOOTER -->
 <footer>
-    <p>© 2026 Curious Minds Studio</p>
-    <p>🌍 Visitors: <span id="count">...</span></p>
+<p>Made with ❤️ by Curious Minds</p>
 </footer>
 
 <script>
-/* DARK MODE */
 function toggleMode(){
-    document.body.classList.toggle("dark");
-    let icon = document.getElementById("icon");
+    document.body.classList.toggle("light");
 
-    if(document.body.classList.contains("dark")){
-        icon.textContent = "🌞";
-        localStorage.setItem("mode","dark");
-    } else {
-        icon.textContent = "🌕";
+    let icon=document.getElementById("icon");
+
+    if(document.body.classList.contains("light")){
+        icon.textContent="🌞";
         localStorage.setItem("mode","light");
+    } else {
+        icon.textContent="🌕";
+        localStorage.setItem("mode","dark");
     }
 }
 
-if(localStorage.getItem("mode") === "dark"){
-    document.body.classList.add("dark");
-    document.getElementById("icon").textContent = "🌞";
+if(localStorage.getItem("mode")==="light"){
+    document.body.classList.add("light");
+    document.getElementById("icon").textContent="🌞";
 }
-
-/* SCROLL ANIMATION */
-const observer = new IntersectionObserver(entries => {
-    entries.forEach(entry => {
-        if(entry.isIntersecting){
-            entry.target.classList.add("show");
-        }
-    });
-});
-
-document.querySelectorAll(".fade").forEach(el => observer.observe(el));
-
-/* FEEDBACK */
-function sendFeedback(e){
-    e.preventDefault();
-    let name = document.getElementById("name").value;
-    let msg = document.getElementById("msg").value;
-
-    window.location.href =
-    `mailto:curiousminds.work@gmail.com?subject=Feedback from ${name}&body=${msg}`;
-}
-
-/* VISITOR COUNT */
-fetch("https://api.countapi.xyz/hit/curiousmindsstudio/mainhub")
-.then(res => res.json())
-.then(res => {
-    document.getElementById("count").innerText = res.value;
-});
 </script>
 
 </body>
