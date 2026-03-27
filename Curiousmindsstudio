@@ -1,250 +1,269 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Curious Minds Studio</title>
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-        body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            line-height: 1.6;
-            color: #333;
-        }
+<title>Curious Minds Studio</title>
 
-        header {
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            color: white;
-            padding: 2rem 0;
-            text-align: center;
-            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-        }
+<meta name="description" content="Curious Minds Studio - AI tools, study blogs, health tools, and creative experiments.">
 
-        header h1 {
-            font-size: 2.5rem;
-            margin-bottom: 0.5rem;
-        }
+<style>
+:root {
+    --bg: #f1f5ff;
+    --text: #111;
+    --glass: rgba(255,255,255,0.25);
+}
 
-        header p {
-            font-size: 1.1rem;
-            opacity: 0.9;
-        }
+.dark {
+    --bg: #0f172a;
+    --text: #e5e7eb;
+    --glass: rgba(255,255,255,0.05);
+}
 
-        .container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 3rem 1rem;
-        }
+body {
+    margin: 0;
+    font-family: 'Segoe UI', sans-serif;
+    background: var(--bg);
+    color: var(--text);
+    transition: 0.3s;
+}
 
-        .intro-section {
-            text-align: center;
-            margin-bottom: 3rem;
-        }
+/* NAV */
+nav {
+    display: flex;
+    justify-content: space-between;
+    padding: 1rem 2rem;
+}
 
-        .intro-section h2 {
-            font-size: 2rem;
-            margin-bottom: 1rem;
-            color: #667eea;
-        }
+nav a {
+    margin-left: 15px;
+    text-decoration: none;
+    color: var(--text);
+}
 
-        .intro-section p {
-            font-size: 1.1rem;
-            color: #666;
-            max-width: 600px;
-            margin: 0 auto;
-        }
+/* HERO */
+.hero {
+    text-align: center;
+    padding: 5rem 1rem;
+}
 
-        .projects-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 2rem;
-            margin-top: 3rem;
-        }
+.hero h1 {
+    font-size: 2.8rem;
+}
 
-        .project-card {
-            background: white;
-            border-radius: 10px;
-            overflow: hidden;
-            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-        }
+.hero p {
+    max-width: 600px;
+    margin: 1rem auto;
+    color: gray;
+}
 
-        .project-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
-        }
+/* BUTTON */
+.btn {
+    display: inline-block;
+    margin: 10px;
+    padding: 12px 20px;
+    background: #6366f1;
+    color: white;
+    border-radius: 8px;
+    text-decoration: none;
+    transition: 0.3s;
+}
 
-        .project-header {
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            color: white;
-            padding: 1.5rem;
-        }
+.btn:hover {
+    transform: scale(1.05);
+}
 
-        .project-header h3 {
-            font-size: 1.5rem;
-            margin-bottom: 0.5rem;
-        }
+/* GLASS CARD */
+.card {
+    background: var(--glass);
+    backdrop-filter: blur(12px);
+    border-radius: 15px;
+    padding: 1.5rem;
+    transition: 0.4s;
+}
 
-        .project-content {
-            padding: 1.5rem;
-        }
+.card:hover {
+    transform: translateY(-10px);
+}
 
-        .project-content p {
-            color: #666;
-            margin-bottom: 1rem;
-            line-height: 1.6;
-        }
+/* GRID */
+.container {
+    max-width: 1100px;
+    margin: auto;
+    padding: 2rem;
+}
 
-        .project-content ul {
-            list-style-position: inside;
-            margin-bottom: 1rem;
-            color: #666;
-        }
+.grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 2rem;
+}
 
-        .project-content li {
-            margin-bottom: 0.5rem;
-        }
+/* SECTION */
+.section {
+    text-align: center;
+    padding: 3rem 1rem;
+}
 
-        .project-buttons {
-            display: flex;
-            gap: 1rem;
-            flex-wrap: wrap;
-        }
+/* ANIMATION */
+.fade {
+    opacity: 0;
+    transform: translateY(40px);
+    transition: 0.8s;
+}
 
-        .btn {
-            display: inline-block;
-            padding: 0.75rem 1.5rem;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            color: white;
-            text-decoration: none;
-            border-radius: 5px;
-            border: none;
-            cursor: pointer;
-            font-size: 0.95rem;
-            transition: opacity 0.3s ease;
-        }
+.show {
+    opacity: 1;
+    transform: translateY(0);
+}
 
-        .btn:hover {
-            opacity: 0.9;
-        }
+/* FORM */
+input, textarea {
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+    border-radius: 6px;
+    border: none;
+}
 
-        .btn-secondary {
-            background: #f0f0f0;
-            color: #333;
-            border: 2px solid #667eea;
-        }
-
-        .btn-secondary:hover {
-            background: #667eea;
-            color: white;
-        }
-
-        footer {
-            background: #333;
-            color: white;
-            text-align: center;
-            padding: 2rem;
-            margin-top: 4rem;
-        }
-
-        footer p {
-            margin-bottom: 0.5rem;
-        }
-
-        .social-links {
-            margin-top: 1rem;
-        }
-
-        .social-links a {
-            color: #667eea;
-            margin: 0 0.5rem;
-            text-decoration: none;
-        }
-
-        .social-links a:hover {
-            text-decoration: underline;
-        }
-
-        @media (max-width: 768px) {
-            header h1 {
-                font-size: 2rem;
-            }
-
-            .intro-section h2 {
-                font-size: 1.5rem;
-            }
-
-            .projects-grid {
-                grid-template-columns: 1fr;
-            }
-        }
-    </style>
+/* FOOTER */
+footer {
+    text-align: center;
+    padding: 2rem;
+    background: #111;
+    color: white;
+}
+</style>
 </head>
+
 <body>
-    <header>
-        <h1>Curious Minds Studio</h1>
-        <p>Innovative Projects & Tools</p>
-    </header>
 
-    <div class="container">
-        <div class="intro-section">
-            <h2>Welcome to Our Projects</h2>
-            <p>Explore our collection of innovative tools and projects designed to solve real-world problems and inspire curiosity.</p>
-        </div>
-
-        <div class="projects-grid">
-            <!-- What-If Project -->
-            <div class="project-card">
-                <div class="project-header">
-                    <h3>🤔 What-If</h3>
-                </div>
-                <div class="project-content">
-                    <p>Explore hypothetical scenarios and discover fascinating insights with our What-If simulation tool.</p>
-                    <ul>
-                        <li>Interactive scenarios</li>
-                        <li>Real-time simulations</li>
-                        <li>Data-driven insights</li>
-                    </ul>
-                    <div class="project-buttons">
-                        <a href="https://github.com/curiousmindsstudio/What-If" class="btn">View Repository</a>
-                        <a href="https://github.com/curiousmindsstudio/What-If" class="btn btn-secondary">Learn More</a>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Health-Tools Project -->
-            <div class="project-card">
-                <div class="project-header">
-                    <h3>💪 Health-Tools</h3>
-                </div>
-                <div class="project-content">
-                    <p>Comprehensive health and wellness tools to help you track, manage, and improve your wellbeing.</p>
-                    <ul>
-                        <li>Health tracking</li>
-                        <li>Wellness insights</li>
-                        <li>Personalized recommendations</li>
-                    </ul>
-                    <div class="project-buttons">
-                        <a href="https://github.com/curiousmindsstudio/Health-tools" class="btn">View Repository</a>
-                        <a href="https://github.com/curiousmindsstudio/Health-tools" class="btn btn-secondary">Learn More</a>
-                    </div>
-                </div>
-            </div>
-        </div>
+<!-- NAV -->
+<nav>
+    <b>Curious Minds</b>
+    <div>
+        <a href="#projects">Projects</a>
+        <a href="/ai-tools.html">AI Tools</a>
+        <a href="/blog/index.html">Blog</a>
+        <a href="#contact">Contact</a>
+        <span onclick="toggleMode()" style="cursor:pointer;" id="icon">🌕</span>
     </div>
+</nav>
 
-    <footer>
-        <p>&copy; 2026 Curious Minds Studio. All rights reserved.</p>
-        <p>Dedicated to innovation and creative problem-solving</p>
-        <div class="social-links">
-            <a href="https://github.com/curiousmindsstudio">GitHub</a>
-            <a href="mailto:contact@curiousmindsstudio.com">Contact</a>
+<!-- HERO -->
+<section class="hero fade">
+    <h1>Think. Build. Grow.</h1>
+    <p>Curious Minds Studio creates AI tools, study resources, and creative experiments to help you learn smarter.</p>
+    
+    <a href="/ai-tools.html" class="btn">🧠 Try AI Tools</a>
+    <a href="/blog/index.html" class="btn">✍️ Read Blog</a>
+</section>
+
+<!-- FEATURES -->
+<section class="container fade">
+    <div class="grid">
+        <div class="card">🚀 Fast & Lightweight</div>
+        <div class="card">🧠 Built for Students</div>
+        <div class="card">🌍 Free & Accessible</div>
+    </div>
+</section>
+
+<!-- PROJECTS -->
+<div class="container" id="projects">
+    <h2 style="text-align:center;">🚀 Projects</h2>
+
+    <div class="grid">
+
+        <div class="card fade">
+            <h3>🤔 What If</h3>
+            <p>Explore hypothetical scenarios and boost curiosity.</p>
+            <a href="https://curiousmindsstudio.github.io/What-If/index.html" class="btn">Live</a>
         </div>
-    </footer>
+
+        <div class="card fade">
+            <h3>💪 Health Tools</h3>
+            <p>Improve your daily health using smart tools.</p>
+            <a href="https://curiousmindsstudio.github.io/health-tools/index.html" class="btn">Live</a>
+        </div>
+
+    </div>
+</div>
+
+<!-- YOUTUBE -->
+<section class="section fade">
+    <h2>🎥 YouTube Channel</h2>
+    <p>Learn through videos and experiments.</p>
+    <a href="https://youtube.com/@curiousminds-studio?si=yVjfN0WJHVp3EZ_q" class="btn">Visit Channel</a>
+</section>
+
+<!-- CONTACT / FEEDBACK -->
+<section class="container fade" id="contact">
+    <h2>💬 Feedback</h2>
+
+    <form onsubmit="sendFeedback(event)">
+        <input id="name" placeholder="Your Name" required>
+        <textarea id="msg" placeholder="Your Feedback" required></textarea>
+        <button class="btn">Send</button>
+    </form>
+
+    <p>Email: curiousminds.work@gmail.com</p>
+</section>
+
+<!-- FOOTER -->
+<footer>
+    <p>© 2026 Curious Minds Studio</p>
+    <p>🌍 Visitors: <span id="count">...</span></p>
+</footer>
+
+<script>
+/* DARK MODE */
+function toggleMode(){
+    document.body.classList.toggle("dark");
+    let icon = document.getElementById("icon");
+
+    if(document.body.classList.contains("dark")){
+        icon.textContent = "🌞";
+        localStorage.setItem("mode","dark");
+    } else {
+        icon.textContent = "🌕";
+        localStorage.setItem("mode","light");
+    }
+}
+
+if(localStorage.getItem("mode") === "dark"){
+    document.body.classList.add("dark");
+    document.getElementById("icon").textContent = "🌞";
+}
+
+/* SCROLL ANIMATION */
+const observer = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+        if(entry.isIntersecting){
+            entry.target.classList.add("show");
+        }
+    });
+});
+
+document.querySelectorAll(".fade").forEach(el => observer.observe(el));
+
+/* FEEDBACK */
+function sendFeedback(e){
+    e.preventDefault();
+    let name = document.getElementById("name").value;
+    let msg = document.getElementById("msg").value;
+
+    window.location.href =
+    `mailto:curiousminds.work@gmail.com?subject=Feedback from ${name}&body=${msg}`;
+}
+
+/* VISITOR COUNT */
+fetch("https://api.countapi.xyz/hit/curiousmindsstudio/mainhub")
+.then(res => res.json())
+.then(res => {
+    document.getElementById("count").innerText = res.value;
+});
+</script>
+
 </body>
 </html>
